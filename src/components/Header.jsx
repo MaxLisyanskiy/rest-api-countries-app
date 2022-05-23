@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { IoMoon, IoMoonOutline } from 'react-icons/io5'
 
 import { Container } from './Container'
+import { setClear } from '../store/controls/controls-actions'
 
 const HeaderEl = styled.header`
 	box-shadow: var(--shadow);
@@ -53,14 +54,9 @@ export const Header = () => {
 		<HeaderEl>
 			<Container>
 				<Wrapper>
-					<Title>Where is the world?</Title>
+					<Title onClick={() => dispatch(setClear())}>Where is the world?</Title>
 					<ModeSwitcher onClick={handleTheme}>
-						{theme === 'light' ? (
-							<IoMoonOutline size='14px' />
-						) : (
-							<IoMoon size='14px' />
-						)}{' '}
-						<span style={{ marginLeft: '0.75rem' }}>{theme} Theme</span>
+						{theme === 'light' ? <IoMoonOutline size='14px' /> : <IoMoon size='14px' />} <span style={{ marginLeft: '0.75rem' }}>{theme} Theme</span>
 					</ModeSwitcher>
 				</Wrapper>
 			</Container>

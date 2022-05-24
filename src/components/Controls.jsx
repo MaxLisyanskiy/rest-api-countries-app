@@ -38,7 +38,14 @@ export const Controls = () => {
 	return (
 		<Wrapper>
 			<Search />
-			<CustomSelect options={options} placeholder='Filter by Region' isClearable isSearchable={false} value={optionsMap[region] || ''} onChange={handleSelect} />
+			<CustomSelect
+				options={options}
+				placeholder='Filter by Region'
+				isClearable
+				isSearchable={false}
+				value={optionsMap[region] || ''}
+				onChange={handleSelect}
+			/>
 		</Wrapper>
 	)
 }
